@@ -1,5 +1,20 @@
 ## 🚀 Guía de Instalación y Ejecución
 
+---
+
+## 🛠 Requisitos Previos
+
+Asegúrate de tener instalados los siguientes programas:
+
+| Herramienta | Versión recomendada | Enlace oficial |
+|---|---|---|
+| Git | 2.40+ | [Descargar Git](https://git-scm.com/downloads) |
+| Python | 3.12+ | [Descargar Python](https://www.python.org/downloads/) |
+| Node.js | 20.x LTS (incluye npm) | [Descargar Node.js](https://nodejs.org/) |
+| PostgreSQL | 14 o superior (con pgAdmin) | [Descargar PostgreSQL](https://www.postgresql.org/download/) |
+
+---
+
 ### Paso 1: Clonar el repositorio
 
 ```bash
