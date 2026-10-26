@@ -1,7 +1,5 @@
 ## 🚀 Guía de Instalación y Ejecución
 
----
-
 ## 🛠 Requisitos Previos
 
 Asegúrate de tener instalados los siguientes programas:
