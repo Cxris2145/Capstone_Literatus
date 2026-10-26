@@ -72,6 +72,26 @@
 | **Móvil** | Capacitor (build Android nativo) |
 | **Automatización** | Python (scraping de libros y generación de portadas) |
 
+## 💡 Innovación y Propuesta de Valor
+
+*   **¿Qué problema resuelve?** Combate la baja retención lectora y el desinterés hacia las obras clásicas de dominio público, las cuales suelen resultar densas o complejas para los lectores modernos debido a la brecha generacional y lingüística.
+*   **¿Qué lo hace diferente?** A diferencia de los e-readers tradicionales, Literatus no es solo un visor de texto. Integra Inteligencia Artificial conversacional (LLMs) directamente en la experiencia de lectura, permitiendo chatear con los personajes del libro para resolver dudas de la trama en tiempo real, sumado a un sistema económico virtual ("Tinta") y minijuegos.
+*   **¿Qué valor agrega?** Transforma la lectura de una actividad pasiva a una experiencia inmersiva e interactiva. Fomenta la comprensión lectora activa mediante el patrón "LLM as a Judge" y gamifica el aprendizaje sin alterar el texto original de los clásicos.
+
+## 🏗 Arquitectura del Sistema
+
+Literatus Novelist V2 utiliza una arquitectura Cliente-Servidor Desacoplada:
+*   **Cliente (Frontend):** Construido como una Single Page Application (SPA) y Progressive Web App (PWA) con Angular 17. Utiliza Capacitor para empaquetar el código web en un binario nativo de Android.
+*   **Servidor (Backend):** Desarrollado en Django 6.0 con Django REST Framework (DRF), exponiendo una API RESTful. El backend se divide en aplicaciones modulares (`ai_engine`, `finance`, `catalog`, etc.) para garantizar la escalabilidad y separación de responsabilidades.
+*   **Capa de Datos:** PostgreSQL 14+ actúa como base de datos relacional transaccional.
+*   **Integraciones Externas:** Consumo de APIs de Transbank (Webpay Plus) para pagos y LLMs (Google Gemini/DeepSeek) orquestados desde el backend para seguridad de credenciales.
+
+## 🛡 Requisitos No Funcionales (RNF)
+
+*   **Seguridad:** Toda comunicación cliente-servidor está cifrada. La autenticación se maneja mediante tokens JWT (JSON Web Tokens) con validación de expiración. Las credenciales de IA y pasarelas de pago se inyectan mediante variables de entorno (`.env`) exclusivas del backend.
+*   **Rendimiento:** El frontend implementa *Lazy Loading* en Angular para los módulos de lectura y chat, reduciendo el peso inicial de la app. El backend procesa las solicitudes de audio TTS (Piper/Kokoro) de forma asíncrona para no bloquear el flujo del chat.
+*   **Disponibilidad:** El uso de Docker (incluido en el repositorio) permite la contenedorización de los servicios, garantizando que el entorno de producción replique con exactitud el entorno de desarrollo y minimizando los tiempos de inactividad por problemas de dependencias.
+
 ---
 
 ## 📁 Estructura del Repositorio
