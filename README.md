@@ -88,59 +88,6 @@ Literatus Novelist V2 utiliza una arquitectura Cliente-Servidor Desacoplada:
 
 ---
 
-## 📁 Estructura del Repositorio
-
-```text
-LiteratusNovelist/
-├── .gitignore                      # Exclusiones de Git (node_modules, venv, .env, etc.)
-├── README.md                       # Guía principal de instalación y ejecución
-└── respaldos-software/
-    ├── Automatizaciones/           # Scripts de scraping de libros y generación de portadas
-    │   ├── Creacion de Portadas_basicas/
-    │   └── scraper_elejandria_libros.py
-    ├── books/                      # Biblioteca de libros y portadas descargadas
-    └── LiteratusNovelist-main/
-        ├── Documentacion/          # Arquitectura, manuales, actas, QA y casos de prueba
-        ├── Gestion/                # Documentos de gestión e integrantes
-        └── Producto/
-            ├── backend/            # API REST Django (Python)
-            │   ├── ai_engine/      # Módulo de IA y chat con personajes
-            │   ├── catalog/        # Catálogo de libros, autores y capítulos
-            │   ├── config/         # Configuración de Django (settings, urls, wsgi)
-            │   ├── core/           # Modelos base, utilidades y paginación
-            │   ├── dashboard/      # Métricas y administración
-            │   ├── finance/        # Integración Webpay Plus y transacciones
-            │   ├── json_data/      # Datos auxiliares e importaciones
-            │   ├── library/        # Inventario y progreso de usuario
-            │   ├── media/          # Archivos estáticos de medios
-            │   ├── scripts/        # Scripts de seed y utilidades
-            │   ├── users/          # Autenticación JWT y perfiles
-            │   ├── manage.py       # CLI de Django
-            │   ├── requirements.txt
-            │   └── .env.example    # Plantilla de variables de entorno
-            └── frontend/           # Aplicación SPA / PWA (Angular 17)
-                ├── android/        # Proyecto nativo Android (Capacitor)
-                ├── src/            # Código fuente Angular
-                ├── angular.json
-                ├── capacitor.config.ts
-                └── package.json
-```
-
----
-
-## 🛠 Requisitos Previos
-
-Asegúrate de tener instalados los siguientes programas:
-
-| Herramienta | Versión recomendada | Enlace oficial |
-|---|---|---|
-| Git | 2.40+ | [Descargar Git](https://git-scm.com/downloads) |
-| Python | 3.12+ | [Descargar Python](https://www.python.org/downloads/) |
-| Node.js | 20.x LTS (incluye npm) | [Descargar Node.js](https://nodejs.org/) |
-| PostgreSQL | 14 o superior (con pgAdmin) | [Descargar PostgreSQL](https://www.postgresql.org/download/) |
-
----
-
 ## 🤖 Automatizaciones y Scripts Adicionales
 
 Dentro de `respaldos-software/Automatizaciones/` encontrarás herramientas auxiliares:
